@@ -1,33 +1,30 @@
-﻿namespace PrimeiroProjeto
+﻿class Musica
 {
-    public class Musica
+    public Musica(Banda artista, string nome)
     {
-        public Musica(Banda artista, string nome)
+        Nome = nome;
+        Artista = artista;
+    }
+
+    public string Nome { get; }
+    public Banda Artista { get; }
+    public Album Album { get; set; }
+    public int Duracao { get; set; }
+    public bool Disponivel { get; set; }
+
+    public string DescricaoResumida => $"A música {Nome} pertence à banda {Artista.Nome}.";
+
+
+    public void ExibirFichaTecnica()
+    {
+        Console.WriteLine($"{Artista.Nome} - {Nome} - {Album.Nome} - {Duracao}");
+        if (Disponivel)
         {
-            Nome = nome;
-            Artista = artista;
+            Console.WriteLine("Disponível no plano.");
         }
-
-        public string Nome { get; }
-        public Banda Artista { get; }
-        public Album Album { get; set; }
-        public int Duracao { get; set; }
-        public bool Disponivel { get; set; }
-
-        public string DescricaoResumida => $"A música {Nome} pertence à banda {Artista.Nome}.";
-
-        
-        public void ExibirFichaTecnica()
+        else
         {
-            Console.WriteLine($"{Artista.Nome} - {Nome} - {Album.Nome} - {Duracao}");
-            if (Disponivel)
-            {
-                Console.WriteLine("Disponível no plano.");
-            }
-            else
-            {
-                Console.WriteLine("Adquira o plus.");
-            }
+            Console.WriteLine("Adquira o plus.");
         }
     }
 }

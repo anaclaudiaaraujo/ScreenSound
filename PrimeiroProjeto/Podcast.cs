@@ -19,7 +19,7 @@
         if (TotalEpisodios > 0)
         {
             Console.WriteLine($"\nPodcast {Nome} - apresentado por {Host}");
-            foreach (Episodio episodio in episodios)
+            foreach (Episodio episodio in episodios.OrderBy(e => e.Ordem))
             {
                 Console.WriteLine($"{episodio.Resumo}");
             }

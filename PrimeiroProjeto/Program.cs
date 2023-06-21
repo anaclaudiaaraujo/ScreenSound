@@ -1,25 +1,14 @@
-﻿using PrimeiroProjeto;
+﻿Episodio ep1 = new(1, "Introdução ao canto popular", 50);
+Episodio ep2 = new(2, "Orgão fonador", 30);
 
-Banda halestorm = new Banda("Halestorm");
-Album albumHalestorm = new Album("The strange case of");
+ep1.AdicionarConvidados("Karina, Manoel, Joaquim");
+ep2.AdicionarConvidados("Maria");
 
-Musica musica1 = new Musica(halestorm, "I miss the misery");
-musica1.Duracao = 312;
+Podcast podcast1 = new Podcast("Ana", "QAnto");
+Podcast podcast2 = new Podcast("José", "É só testar...");
 
-Musica musica2 = new Musica(halestorm, "Love bites")
-{
-    Duracao = 300,
-    Disponivel = true,
-};
+podcast1.AdicionarEpisodio(ep1);
+podcast1.AdicionarEpisodio(ep2);
 
-Musica musica3 = new Musica(halestorm, "Beautiful with you");
-Musica musica4 = new Musica(halestorm, "Break in");
-Musica musica5 = new Musica(halestorm, "Here's to Us");
-
-
-albumHalestorm.AdicionarMusica(musica1);
-albumHalestorm.AdicionarMusica(musica2);
-halestorm.AdicionarAlbum(albumHalestorm);
-albumHalestorm.ExibirMusicasAlbum();
-
-halestorm.ExibirDiscografia();
+podcast1.ExibirDetalhes();
+podcast2.ExibirDetalhes();

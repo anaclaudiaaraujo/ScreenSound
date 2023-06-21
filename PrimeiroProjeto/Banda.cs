@@ -1,12 +1,10 @@
-﻿using System.Runtime.CompilerServices;
-
-class Banda
+﻿class Banda
 {
+    private List<Album> albums = new List<Album>();
     public Banda(string nome)
     {
         Nome = nome;
     }
-    private List<Album> albums = new List<Album>();
     public string Nome { get; }
 
     public void AdicionarAlbum(Album album)

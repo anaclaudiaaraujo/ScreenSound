@@ -1,20 +1,16 @@
-﻿using PrimeiroProjeto;
-public class Album
+﻿class Album
 {
-    public Album(string album)
-    {
-        Nome = album;
-    }
     private List<Musica> musicas = new List<Musica>();
+    public Album(string nome)
+    {
+        Nome = nome;
+    }
     public string Nome { get; }
     public int DuracaoTotal => musicas.Sum(m => m.Duracao);
     public Genero Genero { get; set; }
 
 
-    public void AdicionarMusica(Musica musica)
-    {
-        musicas.Add(musica);
-    }
+    public void AdicionarMusica(Musica musica) => musicas.Add(musica);
 
     public void ExibirMusicasAlbum()
     {
